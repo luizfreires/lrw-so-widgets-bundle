@@ -1,7 +1,7 @@
 <h1>LRW Widgets Bundle</h1>
 **Contributors:** luizrw  
 **Donate link:** https://github.com/luizrw/  
-**Tags:** widget, bundle, slider, icon, heading, call to action, feature, team member
+**Tags:** widget, bundle, slider, icon, heading, call to action, feature, team member  
 **Requires at least:** 3.9  
 **Tested up to:** 4.3  
 **Stable tag:** 1.0.0  
