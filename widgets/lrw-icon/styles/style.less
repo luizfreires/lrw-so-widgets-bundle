@@ -1,0 +1,177 @@
+/* Icon */
+.border-radius (@radius: 5px) {
+	-webkit-border-radius: @radius;
+	-moz-border-radius: @radius;
+	border-radius: @radius;
+}
+
+/* Variables */
+@icon_align: center;
+@shape_format: none;
+@shape_color: #41a9d5;
+@icon_color: @shape_color;
+@icon_size: 4em;
+@image_padding: 1em;
+
+.lrw-icon {
+	// icon element align
+	.lrw-icon-align() when (@icon_align = left) {
+		.lrw-icon-element {
+			text-align: left;
+			margin-bottom: 0.618em;
+		}
+	}
+
+	.lrw-icon-align() when (@icon_align = center) {
+		.lrw-icon-element {
+			text-align: center;
+			margin-bottom: 0.618em;
+		}
+	}
+
+	.lrw-icon-align() when (@icon_align = right) {
+		.lrw-icon-element {
+			text-align: right;
+			margin-bottom: 0.618em;
+		}
+	}
+	.lrw-icon-align();
+
+	a {
+		display: block;
+		position: relative;
+
+		.overlay-icon {
+		    opacity: 0;
+		    position: absolute;
+		    top: 0;
+		    width: 100%;
+		    height: 100%;
+		    box-sizing: border-box;
+			background: rgba(255,255,255,0.5);
+		    border-radius: 0;
+		}
+
+		&:hover,
+		&:focus {
+			.overlay-icon {
+				opacity: 1;
+			}
+		}
+	}
+
+	.element-shape_icon {
+
+		// shape color
+		.icon-inner {
+			color: @icon_color;
+			border: 2px solid transparent;
+		    display: inline-block;
+		    text-align: center;
+
+		    span {
+		    	line-height: inherit;
+		    }
+
+		    &.icon-size-lg {
+		    	line-height: 2.5em;
+		    	width: 2.5em;
+		    	height: 2.5em;
+
+		    	span {
+		    		font-size: 1.2em;
+		    	}
+		    }
+
+		    &.icon-size-2x {
+		    	line-height: 3.15em;
+		    	width: 3.15em;
+		    	height: 3.15em;
+
+		    	span {
+		    		font-size: 1.8em;
+		    	}
+		    }
+
+		    &.icon-size-3x {
+		    	line-height: 4em;
+		    	width: 4em;
+		    	height: 4em;
+
+		    	span {
+		    		font-size: 2.5em;
+		    	}
+		    }
+
+		    &.icon-size-4x {
+		    	line-height: 5em;
+		    	width: 5em;
+		    	height: 5em;
+
+		    	span {
+		    		font-size: 2.85em;
+		    	}
+		    }
+
+		    &.icon-size-5x {
+		    	line-height: 7.15em;
+		    	width: 7.15em;
+		    	height: 7.15em;
+
+		    	span {
+		    		font-size: 5em;
+		    	}
+		    }
+		}
+	}
+
+	.element-shape_image {
+		.image-wrapper {
+			display: inline-block;
+			padding: @image_padding;
+		    max-width: 100%;
+		    vertical-align: top;
+
+		    &.overflow-hidden {
+		    	overflow: hidden;
+		    }
+		}
+	}
+
+	.element-shape_icon,
+	.element-shape_image {
+		// square or not
+		.icon-element-background {
+			background-color: @shape_color;
+		}
+
+		.icon-element-outline {}
+
+		// icon shape formats
+		.icon-inner {
+			&.icon-shape-none {
+				border: 0;
+	    		background: transparent;
+	    	}
+		}
+
+		.icon-shape-circle,
+		.icon-shape-outline-circle {
+			.border-radius(50%);
+		}
+
+		.icon-shape-square,
+		.icon-shape-outline-square {}
+
+		.icon-shape-rounded,
+		.icon-shape-outline-rounded {
+			.border-radius(5px);
+		}
+
+		.icon-shape-outline-circle,
+		.icon-shape-outline-square,
+		.icon-shape-outline-rounded {
+			border-color: @shape_color;
+		}
+	}
+}

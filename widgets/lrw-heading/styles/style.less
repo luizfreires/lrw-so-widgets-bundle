@@ -1,0 +1,31 @@
+@heading_color: inherit;
+@heading_align: center;
+@margin_top: inherit;
+@margin_bottom: inherit;
+
+.lrw-heading {
+	.custom-heading {
+		color: @heading_color;
+		margin-bottom: @margin_bottom;
+		margin-top: @margin_top;
+	}
+
+	.lrw-heading-align() when (@heading_align = left) {
+		.heading-align {
+			text-align: left;
+		}
+	}
+
+	.lrw-heading-align() when (@heading_align = center) {
+		.heading-align {
+			text-align: center;
+		}
+	}
+
+	.lrw-heading-align() when (@heading_align = right) {
+		.heading-align {
+			text-align: right;
+		}
+	}
+	.lrw-heading-align();
+}
