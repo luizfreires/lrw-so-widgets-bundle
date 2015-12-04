@@ -28,7 +28,9 @@ $icon_classes[] = ( $icon_type == 'type_image' && $image_overflow == false ? 'ov
 $url_target = ( $new_window ? 'target="_blank"' : '' );
 ?>
 <div class="lrw-icon">
-	<?php  if ( ! empty( $url ) ) ?><a href="<?php echo esc_url( $url ); ?>" <?php echo $url_target; ?>>
+	<?php  if ( ! empty( $url ) ) : ?>
+		<a href="<?php echo esc_url( $url ); ?>" <?php echo $url_target; ?>>
+	<?php endif; ?>
 	<div class="lrw-icon-element <?php echo esc_attr( implode( ' ', $icon_wrapper_classes ) ); ?>">
 		<?php if ( $icon_type == 'type_icon' ) : ?>
 			<div class="icon-inner <?php echo esc_attr( implode( ' ', $icon_classes ) ); ?>">
