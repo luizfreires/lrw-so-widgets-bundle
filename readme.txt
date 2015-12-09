@@ -15,6 +15,7 @@ Extends the functions of the plugin SiteOrigin Widgets with new widgets options.
 LRW Widgets Bundle is an amazing package of additional widgets to the plugins [Page Builder by SiteOrigin](https://wordpress.org/plugins/siteorigin-panels/) and [SiteOrigin Widgets Bundle](http://siteorigin.com/page-builder/). Create incredible and customizable content with these new widgets.
 
 The widgets available are:
+
 * Call to action.
 * Feature box (or service box).
 * Heading.
