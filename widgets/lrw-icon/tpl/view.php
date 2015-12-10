@@ -28,23 +28,22 @@ $icon_classes[] = ( $icon_type == 'type_image' && $image_overflow == false ? 'ov
 $url_target = ( $new_window ? 'target="_blank"' : '' );
 ?>
 <div class="lrw-icon">
-	<?php  if ( ! empty( $url ) ) : ?>
-		<a href="<?php echo esc_url( $url ); ?>" <?php echo $url_target; ?>>
-	<?php endif; ?>
 	<div class="lrw-icon-element <?php echo esc_attr( implode( ' ', $icon_wrapper_classes ) ); ?>">
 		<?php if ( $icon_type == 'type_icon' ) : ?>
 			<div class="icon-inner <?php echo esc_attr( implode( ' ', $icon_classes ) ); ?>">
 				<?php echo siteorigin_widget_get_icon( $icon ); ?>
+				<?php  if ( ! empty( $url ) ) : ?>
+					<a href="<?php echo esc_url( $url ); ?>" <?php echo $url_target; ?>></a>
+				<?php endif; ?>
 			</div>
 		<?php elseif ( $icon_type == 'type_image' ) : ?>
 			<div class="image-wrapper <?php echo esc_attr( implode( ' ', $icon_classes ) ); ?>">
 				<?php $src = wp_get_attachment_image( $image, $image_size ); ?>
 				<?php echo $src; ?>
+				<?php  if ( ! empty( $url ) ) : ?>
+					<a href="<?php echo esc_url( $url ); ?>" <?php echo $url_target; ?>></a>
+				<?php endif; ?>
 			</div>
 		<?php endif; ?>
-		<?php  if ( ! empty( $url ) ) : ?>
-			<div class="overlay-icon"></div>
-		<?php endif; ?>
 	</div>
-	<?php  if ( ! empty( $url ) ) ?></a>
 </div>

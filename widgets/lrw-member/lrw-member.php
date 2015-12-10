@@ -155,7 +155,7 @@ class LRW_Widget_Member extends SiteOrigin_Widget {
 					'description' => __( '', 'lrw-so-widgets-bundle' ),
 					'fields'      => array(
 						'resume' => array(
-					        'type' => 'textarea',
+					        'type' => 'tinymce',
 					        'label' => __( 'Resume', 'lrw-so-widgets-bundle' ),
 					        'rows' => 5
 					    ),

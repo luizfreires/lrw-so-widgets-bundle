@@ -63,20 +63,14 @@ echo '<div class="lrw-member person-align-' . $align . '">';
 
 		?>
 			<li>
-				<?php  if ( ! empty( $url ) ) : ?>
-					<a href="<?php echo esc_url( $url ); ?>" <?php echo $url_target; ?> title="<?php echo $title; ?>">
-				<?php endif; ?>
-					<div class="lrw-icon-element <?php echo esc_attr( implode( ' ', $class_icon_wrapper ) ); ?>">
-						<div class="icon-inner <?php echo esc_attr( implode( ' ', $icon_shape_type ) ); ?>" <?php if ( ! empty( $shape_styles ) ) echo 'style="' . esc_attr( implode( '; ', $shape_styles ) ) . '"'; ?>>
-							<?php echo siteorigin_widget_get_icon( $icon, $icon_styles ); ?>
-						</div>
+				<div class="lrw-icon-element <?php echo esc_attr( implode( ' ', $class_icon_wrapper ) ); ?>">
+					<div class="icon-inner <?php echo esc_attr( implode( ' ', $icon_shape_type ) ); ?>" <?php if ( ! empty( $shape_styles ) ) echo 'style="' . esc_attr( implode( '; ', $shape_styles ) ) . '"'; ?>>
+						<?php echo siteorigin_widget_get_icon( $icon, $icon_styles ); ?>
 						<?php  if ( ! empty( $url ) ) : ?>
-							<div class="overlay-icon"></div>
+							<a href="<?php echo esc_url( $url ); ?>" <?php echo $url_target; ?>></a>
 						<?php endif; ?>
 					</div>
-				<?php  if ( ! empty( $url ) ) : ?>
-					</a>
-				<?php endif; ?>
+				</div>
 			</li>
 
 		<?php endforeach; ?>
