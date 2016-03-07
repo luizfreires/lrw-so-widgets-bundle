@@ -1,12 +1,12 @@
 <h1>LRW Widgets Bundle</h1>
-**Contributors:** luizrw  
-**Donate link:** https://github.com/luizrw/  
-**Tags:** widget, bundle, slider, icon, heading, call to action, feature, team member  
-**Requires at least:** 3.9  
-**Tested up to:** 4.4  
-**Stable tag:** 1.0.1  
-**License:** GPLv2 or later  
-**License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
+**Contributors:** luizrw
+**Donate link:** https://github.com/luizrw/
+**Tags:** widget, bundle, slider, icon, heading, call to action, feature, team member, counter, chart, pie chart, skillsbar, word rotator, word typed
+**Requires at least:** 3.9
+**Tested up to:** 4.4
+**Stable tag:** 1.1.0
+**License:** GPLv2 or later
+**License URI:** http://www.gnu.org/licenses/gpl-2.0.html
 
 Extends the functions of the plugin SiteOrigin Widgets with new widgets options.
 
@@ -16,12 +16,21 @@ LRW Widgets Bundle is an amazing package of additional widgets to the plugins [P
 
 The widgets available are:
 
+* Counter.
 * Call to action.
+* Empty space.
 * Feature box (or service box).
 * Heading.
 * Icons.
 * Person or Team member.
+* Pie chart.
+* Progress bar.
+* Progress bar vertical.
+* Promote box.
+* Separator.
 * Slider (BxSlider for now).
+* Word rotator.
+* Word typed.
 
 And more options are coming soon.
 
@@ -48,6 +57,32 @@ This section describes how to install the plugin and get it working.
 2. Post editor with new widgets options for SiteOrigin Widgets Bundle
 
 <h2>Changelog</h2>
+
+= 1.1.1 =
+fix cta widget styles and new options to border and background color
+
+= 1.1.0 =
+* New version
+* Fix any styles and scripts
+* Call to action: correct styles for background color and border color
+* Features: fix styles and code
+* Heading:
+	* add options to font-size, line-height and font-weight styles
+	* add link options
+* Icon: fix styles and code
+* Member: fix code
+* Slider: changed the directories of libraries
+* Add Waypoints library
+* New widgets add:
+	* Counter
+	* Empty space
+	* Pie chart
+	* Progress bar
+	* Progress bar vertical
+	* Promote box
+	* Separator
+	* Word rotator
+	* Word typed
 
 = 1.0.0 =
 * First version
