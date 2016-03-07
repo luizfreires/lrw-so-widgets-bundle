@@ -3,7 +3,7 @@
  * Plugin Name:       LRW Widgets Bundle
  * Plugin URI:        https://github.com/luizrw
  * Description:       Extends the functions of the plugin SiteOrigin Widgets with new widgets options.
- * Version:           1.0.1
+ * Version:           1.1.0
  * Author:            LRW
  * Author URI:        https://github.com/luizrw
  * License:           GPL-2.0+
@@ -14,7 +14,8 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-define( 'LRW_BUNDLE_VERSION', '1.0.1' );
+define( 'LRW_BUNDLE_VERSION', '1.1.0' );
+define( 'LRW_BASE_FILE', __FILE__ );
 
 if ( ! class_exists( 'LRW_Widgets_Bundle' ) ) :
 
@@ -112,11 +113,21 @@ if ( ! class_exists( 'LRW_Widgets_Bundle' ) ) :
 
 			$lrw_widgets = array(
 				'LRW_Widget_CTA',
+				'LRW_Widget_Counter',
+				'LRW_Widget_Empty_Space',
 				'LRW_Widget_Feature',
 				'LRW_Widget_Heading',
 				'LRW_Widget_Icon',
 				'LRW_Widget_Member',
-				'LRW_Widget_Slider'
+				'LRW_Widget_Pie_Chart',
+				'LRW_Widget_Progress_Bar',
+				'LRW_Widget_Progress_Bar_Vertical',
+				'LRW_Widget_Promote_Box',
+				'LRW_Widget_Round_Chart',
+				'LRW_Widget_Separator',
+				'LRW_Widget_Slider',
+				'LRW_Widget_Word_Rotator',
+				'LRW_Widget_Word_Typed',
 			);
 
 			foreach ( $lrw_widgets as $lrw_widget ) :
