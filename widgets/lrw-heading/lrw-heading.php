@@ -141,7 +141,7 @@ class LRW_Widget_Heading extends SiteOrigin_Widget {
 		$less_vars = array();
 
 		if ( ! empty( $instance['fontsize'] ) ) {
-			$less_vars['fontsize'] = $instance['fontsize'];
+			$less_vars['fontsize'] = $instance['fontsize'] . 'px';
 		}
 
 		if ( ! empty( $instance['lineheight'] ) ) {
