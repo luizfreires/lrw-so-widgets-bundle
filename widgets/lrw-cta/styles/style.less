@@ -1,4 +1,4 @@
-@background_color: #f9f9f9;
+@background_color: transparent;
 @title_color: inherit;
 @text_color: inherit;
 @padding: 1.8em;
@@ -7,8 +7,11 @@
 	.clearfix();
 	background-color: @background_color;
     padding: @padding;
-    border: 1px solid darken(@background_color, 10%);
     border-radius: .3em;
+
+    &.cta-show-border {
+    	border: 1px solid darken(@background_color, 10%);
+    }
 
     .lrw-cta-wrapper {
     	display: table;

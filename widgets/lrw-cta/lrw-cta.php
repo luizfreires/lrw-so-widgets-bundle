@@ -47,6 +47,13 @@ class LRW_Widget_CTA extends SiteOrigin_Widget {
 					'label' => __( 'Design', 'lrw-so-widgets-bundle' ),
 					'fields' => array(
 
+						'show_border' => array(
+							'type' => 'checkbox',
+							'default' => true,
+							'label' => __( 'Show border?', 'lrw-so-widgets-bundle' ),
+							'description' => __( 'Select a color below to work.', 'lrw-so-widgets-bundle' )
+						),
+
 						'background_color' => array(
 							'type' => 'color',
 							'label' => __( 'Background color', 'lrw-so-widgets-bundle' ),
