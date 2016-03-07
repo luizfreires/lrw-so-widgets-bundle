@@ -2,6 +2,8 @@
 /**
  * Widget Name: LRW - Slider
  * Description: A simple slider images widget. It can be used as a slider or carrousel.
+ * Author: LRW
+ * Author URI: https://github.com/luizrw
  */
 class LRW_Widget_Slider extends SiteOrigin_Widget {
 	function __construct() {
@@ -182,21 +184,16 @@ class LRW_Widget_Slider extends SiteOrigin_Widget {
 	 * Enqueue the slider scripts
 	 */
 	function initialize() {
-	    $this->register_frontend_scripts(
-	        array(
-	            array( 'bxslider-js', siteorigin_widget_get_plugin_dir_url( 'lrw-slider' ) . 'assets/js/jquery.bxslider.min.js', array( 'jquery' ), LRW_BUNDLE_VERSION )
-	        )
-	    );
-
-	    $this->register_frontend_scripts(
-	        array(
-	            array( 'slider-init', siteorigin_widget_get_plugin_dir_url( 'lrw-slider' ) . 'assets/js/slider-init.js', array( 'jquery' ), LRW_BUNDLE_VERSION )
-	        )
-	    );
-
 	    $this->register_frontend_styles(
 	        array(
 	            array( 'bxslider-css', siteorigin_widget_get_plugin_dir_url( 'lrw-slider' ) . 'assets/css/jquery.bxslider.css', array(), LRW_BUNDLE_VERSION )
+	        )
+	    );
+
+	    $this->register_frontend_scripts(
+	        array(
+	            array( 'bxslider-js', siteorigin_widget_get_plugin_dir_url( 'lrw-slider' ) . 'assets/js/jquery.bxslider.min.js', array( 'jquery' ), LRW_BUNDLE_VERSION ),
+	            array( 'slider-init', siteorigin_widget_get_plugin_dir_url( 'lrw-slider' ) . 'assets/js/slider-init.js', array( 'jquery' ), LRW_BUNDLE_VERSION )
 	        )
 	    );
 	}

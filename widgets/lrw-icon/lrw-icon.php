@@ -2,6 +2,8 @@
 /**
  * Widget Name: LRW - Icon
  * Description: Display a customizable icon
+ * Author: LRW
+ * Author URI: https://github.com/luizrw
  */
 class LRW_Widget_Icon extends SiteOrigin_Widget {
 	function __construct() {
@@ -12,9 +14,7 @@ class LRW_Widget_Icon extends SiteOrigin_Widget {
 				'description' => __( 'Display a customizable icon.', 'lrw-so-widgets-bundle' ),
 				'panels_title' => false,
 			),
-		  	array(
-
-		  	),
+		  	array(),
 		  	array(
 				'icon_settings' => array(
 					'type' => 'section',
@@ -75,6 +75,12 @@ class LRW_Widget_Icon extends SiteOrigin_Widget {
 							'type' => 'checkbox',
 							'default' => false,
 							'label' => __( 'Open in a new window', 'lrw-so-widgets-bundle' ),
+						),
+
+						'hover' => array(
+							'type' => 'checkbox',
+							'default' => false,
+							'label' => __( 'Add hover effect?', 'lrw-so-widgets-bundle' ),
 						),
 
 						// Icon
@@ -177,13 +183,29 @@ class LRW_Widget_Icon extends SiteOrigin_Widget {
 
 		return array(
 			'icon_align' 	=> $instance['icon_settings']['icon_align'],
-			'shape_format' 	=> $instance['icon_settings']['shape_format'],
 			'shape_color'	=> $instance['icon_settings']['shape_color'],
 			'icon_color'	=> $instance['icon_settings']['type_icon_section']['icon_color'],
-			'icon_size' 	=> $instance['icon_settings']['type_icon_section']['icon_size'],
 			'image_padding'	=> $instance['icon_settings']['type_image_section']['image_padding'],
 		);
 	}
+
+	function get_template_variables( $instance, $args ) {
+        return array(
+			'shape_format' 		=> $instance['icon_settings']['shape_format'],
+			'shape_color' 		=> $instance['icon_settings']['shape_color'],
+			'icon_type' 		=> $instance['icon_settings']['icon_type'],
+			'url'  				=> $instance['icon_settings']['url'],
+			'hover' 			=> $instance['icon_settings']['hover'],
+			'new_window' 		=> $instance['icon_settings']['new_window'],
+			'icon' 				=> $instance['icon_settings']['type_icon_section']['icon'],
+			'icon_color' 		=> $instance['icon_settings']['type_icon_section']['icon_color'],
+			'icon_size' 		=> $instance['icon_settings']['type_icon_section']['icon_size'],
+			'image'  	   		=> $instance['icon_settings']['type_image_section']['image'],
+			'image_size'		=> $instance['icon_settings']['type_image_section']['image_size'],
+			'image_padding'		=> $instance['icon_settings']['type_image_section']['image_padding'],
+			'image_overflow'	=> $instance['icon_settings']['type_image_section']['image_overflow']
+        );
+    }
 }
 
 siteorigin_widget_register( 'lrw-icon', __FILE__, 'LRW_Widget_Icon' );

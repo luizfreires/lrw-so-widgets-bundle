@@ -2,6 +2,8 @@
 /**
  * Widget Name: LRW - Member
  * Description: A custom team member.
+ * Author: LRW
+ * Author URI: https://github.com/luizrw
  */
 class LRW_Widget_Member extends SiteOrigin_Widget {
 	function __construct() {
@@ -143,7 +145,6 @@ class LRW_Widget_Member extends SiteOrigin_Widget {
 							'label' => __( 'Margin bottom', 'lrw-so-widgets-bundle' ),
 							'default' => '10px',
 						),
-
 					)
 
 				),
@@ -335,26 +336,6 @@ class LRW_Widget_Member extends SiteOrigin_Widget {
 		}
 
 		return $less_vars;
-
-
-
-
-		/*
-
-		if ( empty( $instance ) ) return array();
-
-		return array(
-			'resume_color'			=> $instance['resume_settings']['resume_color'],
-			'margin_top'		=> $instance['resume_settings']['margin_top'],
-			'margin_bottom'	=> $instance['resume_settings']['margin_bottom'],
-			'name_color'			=> $instance['name_settings']['name_color'],
-			'margin_top'		=> $instance['name_settings']['margin_top'],
-			'margin_bottom'	=> $instance['name_settings']['margin_bottom'],
-			'role_color'			=> $instance['role_settings']['role_color'],
-			'margin_top'		=> $instance['role_settings']['margin_top'],
-			'margin_bottom'	=> $instance['role_settings']['margin_bottom'],
-		);*/
-
 	}
 }
 

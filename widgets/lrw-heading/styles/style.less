@@ -1,13 +1,31 @@
-@heading_color: inherit;
+@fontsize: default;
+@lineheight: default;
+@fontweight: initial;
+@heading_color: #222;
 @heading_align: center;
-@margin_top: inherit;
-@margin_bottom: inherit;
+@margin_top: 0px;
+@margin_bottom: 0px;
 
 .lrw-heading {
 	.custom-heading {
 		color: @heading_color;
+		font-size: @fontsize;
+		font-weight: @fontweight;
+		line-height: @lineheight;
 		margin-bottom: @margin_bottom;
 		margin-top: @margin_top;
+
+		a {
+			color: @heading_color;
+		}
+
+		&.has-hover {
+			a {
+				&:hover {
+					color: darken(@heading_color, 10%);
+				}
+			}
+		}
 	}
 
 	.lrw-heading-align() when (@heading_align = left) {

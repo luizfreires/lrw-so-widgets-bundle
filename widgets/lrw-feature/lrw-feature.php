@@ -2,6 +2,8 @@
 /**
  * Widget Name: LRW - Feature
  * Description: Displays a block of attributes with icons and texts.
+ * Author: LRW
+ * Author URI: https://github.com/luizrw
  */
 class LRW_Widget_Feature extends SiteOrigin_Widget {
 	function __construct() {
@@ -64,6 +66,30 @@ class LRW_Widget_Feature extends SiteOrigin_Widget {
 		                    )
 		                ),
 
+		                'icon_size' => array(
+		                    'type' => 'select',
+							'label' => __( 'Icon size', 'lrw-so-widgets-bundle' ),
+		                    'default' => '4x',
+							'options' => array(
+								'lg' => __( 'Mini', 'lrw-so-widgets-bundle' ),
+								'2x' => __( 'Small', 'lrw-so-widgets-bundle' ),
+								'3x' => __( 'normal', 'lrw-so-widgets-bundle' ),
+								'4x' => __( 'Large', 'lrw-so-widgets-bundle' ),
+								'5x' => __( 'Extra large', 'lrw-so-widgets-bundle' ),
+							),
+		                ),
+
+		                'icon_position' => array(
+							'type' => 'select',
+							'label' => __( 'Icon position', 'lrw-so-widgets-bundle' ),
+							'default' => 'top',
+							'options' => array(
+								'top' => __( 'Top', 'lrw-so-widgets-bundle' ),
+								'right' => __( 'Right', 'lrw-so-widgets-bundle' ),
+								'left' => __( 'Left', 'lrw-so-widgets-bundle' ),
+							),
+						),
+
 						// Icon
 						'type_icon_section' => array(
 							'type' => 'section',
@@ -83,19 +109,6 @@ class LRW_Widget_Feature extends SiteOrigin_Widget {
 									'type' => 'color',
 									'label' => __( 'Icon color', 'lrw-so-widgets-bundle' ),
 								),
-
-								'icon_size' => array(
-				                    'type' => 'select',
-									'label' => __( 'Icon size', 'lrw-so-widgets-bundle' ),
-				                    'default' => '4x',
-									'options' => array(
-										'lg' => __( 'Mini', 'lrw-so-widgets-bundle' ),
-										'2x' => __( 'Small', 'lrw-so-widgets-bundle' ),
-										'3x' => __( 'normal', 'lrw-so-widgets-bundle' ),
-										'4x' => __( 'Large', 'lrw-so-widgets-bundle' ),
-										'5x' => __( 'Extra large', 'lrw-so-widgets-bundle' ),
-									),
-				                ),
 							)
 						),
 
@@ -132,7 +145,7 @@ class LRW_Widget_Feature extends SiteOrigin_Widget {
 								'image_padding' => array(
 									'type' => 'measurement',
 									'label' => __( 'Padding', 'lrw-so-widgets-bundle' ),
-									'default' => '1em',
+									'default' => '0em',
 								),
 
 								'image_overflow' => array(
@@ -183,6 +196,18 @@ class LRW_Widget_Feature extends SiteOrigin_Widget {
 								'right' => __( 'Right', 'lrw-so-widgets-bundle' ),
 								'left' => __( 'Left', 'lrw-so-widgets-bundle' ),
 							),
+						),
+
+						'margin_top' => array(
+							'type' => 'measurement',
+							'label' => __( 'Margin top', 'lrw-so-widgets-bundle' ),
+							'default' => '0px',
+						),
+
+						'margin_bottom' => array(
+							'type' => 'measurement',
+							'label' => __( 'Margin bottom', 'lrw-so-widgets-bundle' ),
+							'default' => '10px',
 						),
 					)
 				),
@@ -236,17 +261,36 @@ class LRW_Widget_Feature extends SiteOrigin_Widget {
 
 		return array(
 			'icon_align' 	=> $instance['icon_settings']['icon_align'],
-			'shape_format' 	=> $instance['icon_settings']['shape_format'],
 			'shape_color'	=> $instance['icon_settings']['shape_color'],
 			'icon_color'	=> $instance['icon_settings']['type_icon_section']['icon_color'],
-			'icon_size' 	=> $instance['icon_settings']['type_icon_section']['icon_size'],
 			'image_padding'	=> $instance['icon_settings']['type_image_section']['image_padding'],
 			'heading_color' => $instance['heading']['heading_color'],
 			'heading_align' => $instance['heading']['heading_align'],
+			'margin_top'	=> $instance['heading']['margin_top'],
+			'margin_bottom'	=> $instance['heading']['margin_bottom'],
 			'text_color' 	=> $instance['content']['text_color'],
-			'text_align'	=> $instance['content']['text_align'],
+			'text_align'	=> $instance['content']['text_align']
 		);
 	}
+
+	function get_template_variables( $instance, $args ) {
+        return array(
+            'shape_format' 		=> $instance['icon_settings']['shape_format'],
+			'shape_color' 		=> $instance['icon_settings']['shape_color'],
+			'icon_type' 		=> $instance['icon_settings']['icon_type'],
+			'icon' 				=> $instance['icon_settings']['type_icon_section']['icon'],
+			'icon_color' 		=> $instance['icon_settings']['type_icon_section']['icon_color'],
+			'icon_size' 		=> $instance['icon_settings']['icon_size'],
+			'icon_position'		=> $instance['icon_settings']['icon_position'],
+			'image'  	   		=> $instance['icon_settings']['type_image_section']['image'],
+			'image_size'		=> $instance['icon_settings']['type_image_section']['image_size'],
+			'image_padding'		=> $instance['icon_settings']['type_image_section']['image_padding'],
+			'image_overflow'	=> $instance['icon_settings']['type_image_section']['image_overflow'],
+			'heading_text'  	=> $instance['heading']['heading_text'],
+			'heading_type'  	=> $instance['heading']['heading_type'],
+			'text' 		   		=> $instance['content']['text']
+        );
+    }
 }
 
 siteorigin_widget_register( 'lrw-feature', __FILE__, 'LRW_Widget_Feature' );

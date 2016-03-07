@@ -42,7 +42,6 @@ module.exports = function( grunt ) {
 		makepot: {
 			dist: {
 				options: {
-                	mainFile: 'lrw-so-widgets-bundle.php',
 					type: 'wp-plugin',
 					potHeaders: {
 						'report-msgid-bugs-to': 'https://wordpress.org/plugins/lrw-so-widgets-bundle/',

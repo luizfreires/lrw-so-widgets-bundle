@@ -7,10 +7,8 @@
 
 /* Variables */
 @icon_align: center;
-@shape_format: none;
 @shape_color: #41a9d5;
 @icon_color: #41a9d5;
-@icon_size: 4em;
 @image_padding: 1em;
 
 .lrw-icon {
@@ -129,10 +127,18 @@
 		// square or not
 		.icon-element-background {
 			background-color: @shape_color;
+
+			&.has-hover:hover {
+		    	background-color: darken(@shape_color, 10%);
+		    }
 		}
 
 		.icon-element-outline {
 			border: 2px solid @shape_color;
+
+			&.has-hover:hover {
+		    	border-color: darken(@shape_color, 10%);
+		    }
 		}
 
 		// icon shape formats
@@ -144,6 +150,14 @@
 			    line-height: normal;
 			    width: auto;
 			    position: relative;
+
+			    &:hover {
+			    	background: transparent;
+			    }
+
+			    &.has-hover:hover {
+			    	color: darken(@icon_color, 10%);
+			    }
 	    	}
 		}
 
@@ -164,6 +178,11 @@
 		.icon-shape-outline-square,
 		.icon-shape-outline-rounded {
 			border-color: @shape_color;
+
+			&.has-hover:hover {
+		    	border-color: darken(@shape_color, 10%);
+		    	color: darken(@icon_color, 10%);
+		    }
 		}
 	}
 }

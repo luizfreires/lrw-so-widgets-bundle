@@ -2,6 +2,8 @@
 /**
  * Widget Name: LRW - Heading
  * Description: A custom heading.
+ * Author: LRW
+ * Author URI: https://github.com/luizrw
  */
 class LRW_Widget_Heading extends SiteOrigin_Widget {
 	function __construct() {
@@ -10,7 +12,7 @@ class LRW_Widget_Heading extends SiteOrigin_Widget {
 		  	__( 'LRW - Heading', 'lrw-so-widgets-bundle' ),
 		  	array(
 				'description' => __( 'A custom heading.', 'lrw-so-widgets-bundle' ),
-				'panels_title' => false,
+				'panels_title' => 'title',
 			),
 		  	array(),
 		  	array(
@@ -32,6 +34,24 @@ class LRW_Widget_Heading extends SiteOrigin_Widget {
 					),
 				),
 
+				'fontsize' => array(
+					'type' => 'number',
+					'label' => __( 'Font size', 'lrw-so-widgets-bundle' ),
+					'description' => __( 'Set a font size or keep the default.', 'lrw-so-widgets-bundle' ),
+				),
+
+				'lineheight' => array(
+					'type' => 'number',
+					'label' => __( 'Line height', 'lrw-so-widgets-bundle' ),
+					'description' => __( 'Set a line height or keep the default.', 'lrw-so-widgets-bundle' ),
+				),
+
+				'fontweight' => array(
+					'type' => 'number',
+					'label' => __( 'Font Weight', 'lrw-so-widgets-bundle' ),
+					'description' => __( 'Set a font weight or keep the default.', 'lrw-so-widgets-bundle' ),
+				),
+
 				'heading_color' => array(
 					'type' => 'color',
 					'label' => __( 'Text color', 'lrw-so-widgets-bundle' ),
@@ -51,17 +71,60 @@ class LRW_Widget_Heading extends SiteOrigin_Widget {
 				'margin_top' => array(
 					'type' => 'measurement',
 					'label' => __( 'Margin top', 'lrw-so-widgets-bundle' ),
-					'default' => '',
+					'default' => '0px',
 				),
 
 				'margin_bottom' => array(
 					'type' => 'measurement',
 					'label' => __( 'Margin bottom', 'lrw-so-widgets-bundle' ),
-					'default' => '',
+					'default' => '0px',
+				),
+
+				'url_active' => array(
+					'type' => 'radio',
+					'default' => 'no',
+					'label' => __( 'Add link?', 'lrw-so-widgets-bundle' ),
+					'state_emitter' => array(
+                        'callback' => 'select',
+                        'args' => array( 'url_active' )
+                    ),
+                    'options' => array(
+						'yes' => __( 'Yes', 'lrw-so-widgets-bundle' ),
+						'no' => __( 'No', 'lrw-so-widgets-bundle' )
+					),
+				),
+
+				'url_settings' => array(
+					'type' => 'section',
+					'label' => __( 'URL settings', 'lrw-so-widgets-bundle' ),
+					'item_name' => __( 'URL', 'lrw-so-widgets-bundle' ),
+					'state_handler' => array(
+						'url_active[yes]' => array( 'show' ),
+						'_else[url_active]' => array( 'hide' ),
+					),
+					'hide' => true,
+					'fields' => array(
+						'url' => array(
+							'type' => 'link',
+							'label' => __( 'Destination URL (optional)', 'lrw-so-widgets-bundle' ),
+						),
+
+						'new_window' => array(
+							'type' => 'checkbox',
+							'default' => false,
+							'label' => __( 'Open in a new window', 'lrw-so-widgets-bundle' ),
+						),
+
+						'hover' => array(
+							'type' => 'checkbox',
+							'default' => false,
+							'label' => __( 'Add hover effect?', 'lrw-so-widgets-bundle' ),
+						),
+					)
 				),
 			),
 
-		  plugin_dir_path( __FILE__ )
+		  	plugin_dir_path( __FILE__ )
 		);
 	}
 
@@ -75,14 +138,37 @@ class LRW_Widget_Heading extends SiteOrigin_Widget {
 	}
 
 	function get_less_variables( $instance ) {
-		if ( empty( $instance ) ) return array();
+		$less_vars = array();
 
-		return array(
-			'heading_color' => $instance['heading_color'],
-			'heading_align' => $instance['heading_align'],
-			'margin_top' 	=> $instance['margin_top'],
-			'margin_bottom' => $instance['margin_bottom'],
-		);
+		if ( ! empty( $instance['fontsize'] ) ) {
+			$less_vars['fontsize'] = $instance['fontsize'];
+		}
+
+		if ( ! empty( $instance['lineheight'] ) ) {
+			$less_vars['lineheight'] = $instance['lineheight'];
+		}
+
+		if ( ! empty( $instance['fontweight'] ) ) {
+			$less_vars['fontweight'] = $instance['fontweight'];
+		}
+
+		if ( ! empty( $instance['heading_color'] ) ) {
+			$less_vars['heading_color'] = $instance['heading_color'];
+		}
+
+		if ( ! empty( $instance['heading_align'] ) ) {
+			$less_vars['heading_align'] = $instance['heading_align'];
+		}
+
+		if ( ! empty( $instance['margin_top'] ) ) {
+			$less_vars['margin_top'] = $instance['margin_top'];
+		}
+
+		if ( ! empty( $instance['margin_bottom'] ) ) {
+			$less_vars['margin_bottom'] = $instance['margin_bottom'];
+		}
+
+		return $less_vars;
 	}
 }
 

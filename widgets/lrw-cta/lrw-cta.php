@@ -2,6 +2,8 @@
 /**
  * Widget Name: LRW - Call to Action
  * Description: A call to action widget.
+ * Author: LRW
+ * Author URI: https://github.com/luizrw
  */
 class LRW_Widget_CTA extends SiteOrigin_Widget {
 	function __construct() {
@@ -17,69 +19,68 @@ class LRW_Widget_CTA extends SiteOrigin_Widget {
 		  	),
 		  	array(
 
-			'text' => array(
-				'type' => 'section',
-				'label' => __( 'Texts', 'lrw-so-widgets-bundle' ),
-				'fields' => array(
+				'text' => array(
+					'type' => 'section',
+					'label' => __( 'Texts', 'lrw-so-widgets-bundle' ),
+					'fields' => array(
 
-					'title' => array(
-						'type' => 'text',
-						'label' => __( 'Title', 'lrw-so-widgets-bundle' ),
-					),
+						'title' => array(
+							'type' => 'text',
+							'label' => __( 'Title', 'lrw-so-widgets-bundle' ),
+						),
 
-					'sub_title' => array(
-						'type' => 'text',
-						'label' => __( 'Subtitle', 'lrw-so-widgets-bundle' ),
-					),
-			  	)
+						'sub_title' => array(
+							'type' => 'text',
+							'label' => __( 'Subtitle', 'lrw-so-widgets-bundle' ),
+						),
+				  	)
+				),
+
+				'button' => array(
+					'type' => 'widget',
+					'class' => 'SiteOrigin_Widget_Button_Widget',
+					'label' => __( 'Button', 'lrw-so-widgets-bundle' ),
+				),
+
+				'design' => array(
+					'type' => 'section',
+					'label' => __( 'Design', 'lrw-so-widgets-bundle' ),
+					'fields' => array(
+
+						'background_color' => array(
+							'type' => 'color',
+							'label' => __( 'Background color', 'lrw-so-widgets-bundle' ),
+							'default' => '#f9f9f9'
+						),
+
+						'title_color' => array(
+							'type' => 'color',
+							'label' => __( 'Title color', 'lrw-so-widgets-bundle' ),
+							'default' => ''
+						),
+
+						'text_color' => array(
+							'type' => 'color',
+							'label' => __( 'Text color', 'lrw-so-widgets-bundle' ),
+							'default' => ''
+						),
+
+						'padding' => array(
+							'type' => 'select',
+							'label' => __( 'Padding', 'lrw-so-widgets-bundle' ),
+							'default' => '2',
+							'options' => array(
+								'0.8' => __( 'Low', 'lrw-so-widgets-bundle' ),
+								'1.8' => __( 'Medium', 'lrw-so-widgets-bundle' ),
+								'2.8' => __( 'High', 'lrw-so-widgets-bundle' ),
+								'3.8' => __( 'Very high', 'lrw-so-widgets-bundle' ),
+							),
+						),
+
+					)
+				),
 			),
-
-			'button' => array(
-				'type' => 'widget',
-				'class' => 'SiteOrigin_Widget_Button_Widget',
-				'label' => __( 'Button', 'lrw-so-widgets-bundle' ),
-			),
-
-			'design' => array(
-			  'type' => 'section',
-			  'label' => __( 'Design', 'lrw-so-widgets-bundle' ),
-			  'fields' => array(
-
-				'background_color' => array(
-				  'type' => 'color',
-				  'label' => __( 'Background color', 'lrw-so-widgets-bundle' ),
-				  'default' => '#f9f9f9'
-				),
-
-				'title_color' => array(
-				  'type' => 'color',
-				  'label' => __( 'Title color', 'lrw-so-widgets-bundle' ),
-				  'default' => ''
-				),
-
-				'text_color' => array(
-				  'type' => 'color',
-				  'label' => __( 'Text color', 'lrw-so-widgets-bundle' ),
-				  'default' => ''
-				),
-
-				'padding' => array(
-					'type' => 'select',
-					'label' => __( 'Padding', 'lrw-so-widgets-bundle' ),
-					'default' => '2',
-					'options' => array(
-						'0.8' => __( 'Low', 'lrw-so-widgets-bundle' ),
-						'1.8' => __( 'Medium', 'lrw-so-widgets-bundle' ),
-						'2.8' => __( 'High', 'lrw-so-widgets-bundle' ),
-						'3.8' => __( 'Very high', 'lrw-so-widgets-bundle' ),
-					),
-				),
-
-			  )
-			),
-		  ),
-
-		  plugin_dir_path( __FILE__ )
+			plugin_dir_path( __FILE__ )
 		);
 	}
 
