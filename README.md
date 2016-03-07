@@ -1,12 +1,12 @@
-<h1>LRW Widgets Bundle</h1>  
-**Contributors:** luizrw  
-**Donate link:** https://github.com/luizrw/  
-**Tags:** widget, bundle, slider, icon, heading, call to action, feature, team member, counter, chart, pie chart, skillsbar, word rotator, word typed  
-**Requires at least:** 3.9  
-**Tested up to:** 4.4  
-**Stable tag:** 1.1.1  
-**License:** GPLv2 or later  
-**License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
+<h1>LRW Widgets Bundle</h1>
+**Contributors:** luizrw
+**Donate link:** https://github.com/luizrw/
+**Tags:** widget, bundle, slider, icon, heading, call to action, feature, team member, counter, chart, pie chart, skillsbar, word rotator, word typed
+**Requires at least:** 3.9
+**Tested up to:** 4.4
+**Stable tag:** 1.1.2
+**License:** GPLv2 or later
+**License URI:** http://www.gnu.org/licenses/gpl-2.0.html
 
 Extends the functions of the plugin SiteOrigin Widgets with new widgets options.
 
@@ -58,7 +58,10 @@ This section describes how to install the plugin and get it working.
 
 <h2>Changelog</h2>
 
-= 1.1.1 =  
+= 1.1.2 =
+fix heading fontsize
+
+= 1.1.1 =
 fix cta widget styles and new options to border and background color
 
 = 1.1.0 =

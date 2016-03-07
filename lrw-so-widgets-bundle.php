@@ -3,7 +3,7 @@
  * Plugin Name:       LRW Widgets Bundle
  * Plugin URI:        https://github.com/luizrw
  * Description:       Extends the functions of the plugin SiteOrigin Widgets with new widgets options.
- * Version:           1.1.1
+ * Version:           1.1.2
  * Author:            LRW
  * Author URI:        https://github.com/luizrw
  * License:           GPL-2.0+
@@ -14,7 +14,7 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-define( 'LRW_BUNDLE_VERSION', '1.1.1' );
+define( 'LRW_BUNDLE_VERSION', '1.1.2' );
 define( 'LRW_BASE_FILE', __FILE__ );
 
 if ( ! class_exists( 'LRW_Widgets_Bundle' ) ) :
