@@ -4,7 +4,7 @@
 **Tags:** widget, bundle, slider, icon, heading, call to action, feature, team member, counter, chart, pie chart, skillsbar, word rotator, word typed  
 **Requires at least:** 3.9  
 **Tested up to:** 4.4  
-**Stable tag:** 1.1.0  
+**Stable tag:** 1.1.1  
 **License:** GPLv2 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
 
