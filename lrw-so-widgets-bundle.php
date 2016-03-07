@@ -123,7 +123,6 @@ if ( ! class_exists( 'LRW_Widgets_Bundle' ) ) :
 				'LRW_Widget_Progress_Bar',
 				'LRW_Widget_Progress_Bar_Vertical',
 				'LRW_Widget_Promote_Box',
-				'LRW_Widget_Round_Chart',
 				'LRW_Widget_Separator',
 				'LRW_Widget_Slider',
 				'LRW_Widget_Word_Rotator',
