@@ -112,13 +112,19 @@
 	.element-shape_image {
 		.image-wrapper {
 			display: inline-block;
-			padding: @image_padding;
 		    max-width: 100%;
+			padding: @image_padding;
+		    position: relative;
 		    vertical-align: top;
+    		width: auto;
 
 		    &.overflow-hidden {
 		    	overflow: hidden;
 		    }
+		}
+
+		img {
+			display: block;
 		}
 	}
 

@@ -3,8 +3,8 @@ Contributors: luizrw
 Donate link: https://github.com/luizrw
 Tags: widget, bundle, slider, icon, heading, call to action, feature, team member, counter, chart, pie chart, skillsbar, word rotator, word typed
 Requires at least: 3.9
-Tested up to: 4.4
-Stable tag: 1.1.2
+Tested up to: 4.4.2
+Stable tag: 1.1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -59,6 +59,10 @@ This section describes how to install the plugin and get it working.
 2. Post editor with new widgets options for SiteOrigin Widgets Bundle
 
 == Changelog ==
+
+= 1.1.3 =
+* Feature widget: fix styles for icon image
+* Icon widget: fix styles and dimensions for icon image
 
 = 1.1.2 =
 fix heading fontsize
